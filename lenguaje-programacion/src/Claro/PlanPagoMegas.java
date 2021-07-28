@@ -7,30 +7,30 @@ package Claro;
 public class PlanPagoMegas extends PlanCelular{
     
     private double megas;
-    private double costoMegas;
+    private double costoGigas;
     private double tarifaBase;
 
     public PlanPagoMegas(Persona p, String c, String m, String mo, String n, 
-            double megas, double costoMegas, double tarifaBase) {
+            double megas, double costoGigas, double tarifaBase) {
         super(p, c, m, mo, n);
         this.megas = megas;
-        this.costoMegas = costoMegas;
+        this.costoGigas = costoGigas;
         this.tarifaBase = tarifaBase;
         setPagoMensual();
     }
     
     public void setMegas(int megas) {
-        this.megas = megas;
+        this.megas = megas/1024;
     }
     public double getMegas() {
-        return megas / 1024;
+        return megas;
     }
     
-    public void setCostoMegas(double costoMegas) {
-        this.costoMegas = costoMegas / 1024;
+    public void setCostoGigas(double costoGigas) {
+        this.costoGigas = costoGigas;
     }
-    public double getCostoMegas() {
-        return costoMegas;
+    public double getCostoGigas() {
+        return costoGigas;
     }
     
     public void setTarifaBase(double tarifaBase) {
@@ -42,19 +42,19 @@ public class PlanPagoMegas extends PlanCelular{
     
     @Override
     public void setPagoMensual(){
-        this.pagoMensual = tarifaBase + (megas * costoMegas) ;
+        this.pagoMensual = tarifaBase + (megas * costoGigas) ;
     }
     
     @Override
     public String toString() {
         String cadena = String.format("\tPlan Pago Megas\n"
-                + "Megas: %d GB\n"
-                + "Costo por cada Mega: %.2f\n"
+                + "Gigas: %d GB\n"
+                + "Costo por cada Giga: %.2f\n"
                 + "Tarifa Base: %.2f\n"
                 + "Pago Mensual: %.2f\n",
                 super.toString(),
                 getMegas(),
-                getCostoMegas(),
+                getCostoGigas(),
                 getTarifaBase(),
                 getPagoMensual());
         return cadena;

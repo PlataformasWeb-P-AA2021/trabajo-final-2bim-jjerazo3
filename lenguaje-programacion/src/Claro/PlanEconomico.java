@@ -8,12 +8,12 @@ public class PlanEconomico extends PlanCelular {
     
     private int minutos;
     private double costoMinutos;
-    private int megas;
+    private double megas;
     private double costoMegas;
     private int porcentajeDescuento;
 
     public PlanEconomico(Persona p, String c, String m, String mo, String n,
-            int minutos, double costoMinutos, int megas, double costoMegas, int porcentajeDescuento) {
+            int minutos, double costoMinutos, double megas, double costoMegas, int porcentajeDescuento) {
         super(p, c, m, mo, n);
         this.minutos = minutos;
         this.costoMinutos = costoMinutos;
@@ -38,9 +38,9 @@ public class PlanEconomico extends PlanCelular {
     }
   
     public void setMegas(int megas) {
-        this.megas = megas;
+        this.megas = megas / 1024;
     }
-    public int getMegas() {
+    public double getMegas() {
         return megas;
     }
 
@@ -69,8 +69,8 @@ public class PlanEconomico extends PlanCelular {
         String cadena = String.format("\tPlan Pago Economico\n"
                 + "Minutos: %d\n"
                 + "Costo minutos: %.2f\n"
-                + "Megas: %d\n"
-                + "Costo por cada Megas: %.2f\n"
+                + "Gigas: %d\n"
+                + "Costo por cada Giga: %.2f\n"
                 + "Porcentaje descuento: %d\n"
                 + "Pago Mensual: %.2f\n",
                 super.toString(),
