@@ -6,12 +6,12 @@ package Claro;
  */
 public class PlanPagoMegas extends PlanCelular{
     
-    private int megas;
+    private double megas;
     private double costoMegas;
     private double tarifaBase;
 
     public PlanPagoMegas(Persona p, String c, String m, String mo, String n, 
-            int megas, double costoMegas, double tarifaBase) {
+            double megas, double costoMegas, double tarifaBase) {
         super(p, c, m, mo, n);
         this.megas = megas;
         this.costoMegas = costoMegas;
@@ -22,12 +22,12 @@ public class PlanPagoMegas extends PlanCelular{
     public void setMegas(int megas) {
         this.megas = megas;
     }
-    public int getMegas() {
-        return megas;
+    public double getMegas() {
+        return megas / 1024;
     }
     
     public void setCostoMegas(double costoMegas) {
-        this.costoMegas = costoMegas;
+        this.costoMegas = costoMegas / 1024;
     }
     public double getCostoMegas() {
         return costoMegas;

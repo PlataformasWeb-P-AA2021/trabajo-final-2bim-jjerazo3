@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Serializador;
 
 /**
  *
- * @author jonathanerazoborrero
+ * @author Jose Cordova, Jonathan Erazo
  */
+
 import Claro.PlanCelular;
 import java.io.*;
 import java.util.List;

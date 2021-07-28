@@ -60,6 +60,10 @@ public abstract class PlanCelular {
     }
     
     public abstract void setPagoMensual();
+    
+    public double getPagoMensual(){
+        return pagoMensual; 
+    }
 
     @Override
     public String toString() {

@@ -8,11 +8,11 @@ public class PlanPagoMinutosMegas extends PlanCelular {
     
     private int minutos;
     private double costoMinutos;
-    private int megas;
+    private double megas;
     private double costoMegas;
 
     public PlanPagoMinutosMegas(Persona p, String c, String m, String mo, String n,
-            int minutos, double costoMinutos, int megas, double costoMegas) {
+            int minutos, double costoMinutos, double megas, double costoMegas) {
         super(p, c, m, mo, n);
         this.minutos = minutos;
         this.costoMinutos = costoMinutos;
@@ -37,7 +37,7 @@ public class PlanPagoMinutosMegas extends PlanCelular {
     public void setMegas(int megas) {
         this.megas = megas;
     }
-    public int getMegas() {
+    public double getMegas() {
         return megas;
     }
 
