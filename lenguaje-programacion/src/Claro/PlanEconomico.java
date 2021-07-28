@@ -9,16 +9,16 @@ public class PlanEconomico extends PlanCelular {
     private int minutos;
     private double costoMinutos;
     private double megas;
-    private double costoMegas;
+    private double costoGigas;
     private int porcentajeDescuento;
 
     public PlanEconomico(Persona p, String c, String m, String mo, String n,
-            int minutos, double costoMinutos, double megas, double costoMegas, int porcentajeDescuento) {
+            int minutos, double costoMinutos, double megas, double costoGigas, int porcentajeDescuento) {
         super(p, c, m, mo, n);
         this.minutos = minutos;
         this.costoMinutos = costoMinutos;
         this.megas = megas;
-        this.costoMegas = costoMegas;
+        this.costoGigas = costoGigas;
         this.porcentajeDescuento = porcentajeDescuento;
         setPagoMensual();
     }
@@ -44,11 +44,11 @@ public class PlanEconomico extends PlanCelular {
         return megas;
     }
 
-    public void setCostoMegas(double costoMegas) {
-        this.costoMegas = costoMegas;
+    public void setCostoGigas(double costoGigas) {
+        this.costoGigas = costoGigas;
     }
-    public double getCostoMegas() {
-        return costoMegas;
+    public double getCostoGigas() {
+        return costoGigas;
     }
     
     public void setPorcentajeDescuento(int Descuento) {
@@ -60,8 +60,8 @@ public class PlanEconomico extends PlanCelular {
 
     @Override
     public void setPagoMensual(){
-        this.pagoMensual = ((minutos * costoMinutos) + (megas * costoMegas))
-                - (((minutos * costoMinutos) + (megas * costoMegas))*porcentajeDescuento)/100 ;
+        this.pagoMensual = ((minutos * costoMinutos) + (megas * costoGigas))
+                - (((minutos * costoMinutos) + (megas * costoGigas))*porcentajeDescuento)/100 ;
     }
     
     @Override
@@ -77,7 +77,7 @@ public class PlanEconomico extends PlanCelular {
                 getMinutos(),
                 getCostoMinutos(),
                 getMegas(),
-                getCostoMegas(),
+                getCostoGigas(),
                 getPorcentajeDescuento(),
                 getPagoMensual());
         return cadena;
