@@ -82,7 +82,7 @@ public class Ejecutor {
                     modelo = sc.nextLine();
                     System.out.print("Número de celular: ");
                     numero = sc.nextLine();
-                    System.out.print("Gigas: ");
+                    System.out.print("Megas: ");
                     gigas = sc.nextDouble();                    
                     System.out.print("Costo por cada giga: $ ");
                     costo_giga = sc.nextDouble();                    
@@ -119,7 +119,7 @@ public class Ejecutor {
                     minutos = sc.nextDouble();
                     System.out.print("Costo por minuto: $ ");
                     costo_min = sc.nextDouble();                   
-                    System.out.print("Gigas: ");
+                    System.out.print("Megas: ");
                     gigas = sc.nextDouble();                   
                     System.out.print("Costo por cada giga: $ ");
                     costo_giga = sc.nextDouble();
@@ -158,7 +158,7 @@ public class Ejecutor {
                     System.out.print("Costo por minuto: $ ");
                     costo_min = sc.nextDouble();
                     
-                    System.out.print("Gigas: ");
+                    System.out.print("Megas: ");
                     gigas = sc.nextDouble();
                     
                     System.out.print("Costo por cada giga: $ ");

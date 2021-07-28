@@ -1,20 +1,20 @@
 package paquete2;
 public class PlanPostPagoMegas extends PlanCelular {
 
-    private double gigas;
+    private double megas;
     private double costoGigas;
     private double tarifaBase;
 
     public PlanPostPagoMegas(Persona p, String c, String m,
             String md, String n, double gb, double costogb, double tarifa) {
         super(p, c, m, md, n);
-        gigas = gb;
+        megas = gb;
         costoGigas = costogb;
         tarifaBase = tarifa;
     }
 
     public void establecerGigas(double n) {
-        gigas = n;
+        megas = n;
     }
 
     public void establecerCostoGigas(double n) {
@@ -26,7 +26,7 @@ public class PlanPostPagoMegas extends PlanCelular {
     }
 
     public double obtenerGigas() {
-        return gigas;
+        return megas / 1000;
     }
 
     public double obtenerCostoGigas() {
@@ -39,7 +39,7 @@ public class PlanPostPagoMegas extends PlanCelular {
 
     @Override
     public void CalcularMensualidad() {
-        pagoMensual = (gigas * costoGigas) + tarifaBase;
+        pagoMensual = (megas * costoGigas) + tarifaBase;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class PlanPostPagoMegas extends PlanCelular {
                 + "Marca: %s\n"
                 + "Modelo: %s\n"
                 + "Numero: %s\n"
-                + "Gigas: %.1f\n"
+                + "Gigas: %.3f GB\n"
                 + "Costo por giga: $ %.2f\n"
                 + "Tarifa base: $ %.2f\n"
                 + "Pago mensual: $ %.2f\n",

@@ -3,7 +3,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
 
     private double minutos;
     private double costoMinutos;
-    private double gigas;
+    private double megas;
     private double costoGigas;
     private double porcDescuento;
     private double descuento;
@@ -14,7 +14,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
         super(p, c, m, md, n);
         minutos = min;
         costoMinutos = costoMin;
-        gigas = gb;
+        megas = gb;
         costoGigas = costoGb;
         porcDescuento = d;
     }
@@ -28,7 +28,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
     }
 
     public void establecerGigas(double n) {
-        gigas = n;
+        megas = n/1024;
     }
 
     public void establecerCostoGigas(double n) {
@@ -52,7 +52,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
     }
 
     public double obtenerGigas() {
-        return gigas;
+        return megas / 1000;
     }
 
     public double obtenerCostoGigas() {
@@ -69,7 +69,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
 
     @Override
     public void CalcularMensualidad() {
-        pagoMensual = (minutos * costoMinutos) + (gigas * costoGigas)
+        pagoMensual = (minutos * costoMinutos) + (megas * costoGigas)
                 - descuento;
     }
 
@@ -85,7 +85,7 @@ public class PlanPostPagoMinutosMegasEconomico extends PlanCelular {
                 + "Numero: %s\n"
                 + "Minutos: %.1f\n"
                 + "Costo por minuto: $ %.2f\n"
-                + "Gigas: %.1f\n"
+                + "Gigas: %.3f GB\n"
                 + "Costo por giga: $ %.2f\n"
                 + "Descuento: (%.1f%s) $ %.2f\n"
                 + "Pago mensual: $ %.2f\n",
